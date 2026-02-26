@@ -3,66 +3,374 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>바로가기 카드</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>내 북마크 런처</title>
+  <link rel="stylesheet" href="style4.css" />
 </head>
+
 <body>
   <header class="top">
-    <h1>내 바로가기</h1>
-    <p>카드를 클릭하면 링크로 이동합니다.</p>
+    <h1>내 북마크</h1>
+    <p>목록을 클릭하면 새 탭으로 열립니다.</p>
   </header>
 
   <main class="wrap">
-    <section class="grid" aria-label="바로가기 카드 목록">
+    <section class="grid" aria-label="북마크 목록">
 
-      <!-- 카드 1 -->
-      <a class="card" href="https://www.google.com" target="_blank" rel="noopener">
+      <!-- ===== 자주쓰는 ===== -->
+      <div class="cat">
+        <div class="cat-title">자주쓰는</div>
+        <div class="cat-line"></div>
+      </div>
+
+      <!-- Naver -->
+      <a class="card" href="https://www.naver.com/" target="_blank" rel="noopener">
         <div class="icon" aria-hidden="true">
-          <!-- 간단한 SVG 아이콘(폴더 느낌) -->
-          <svg viewBox="0 0 24 24" width="20" height="20">
-            <path d="M10 4l2 2h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h6z"/>
-          </svg>
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=naver.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: home -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3l9-8z"/></svg>
         </div>
         <div class="text">
-          <div class="title">Shock_sticker Download</div>
-          <div class="desc">스티커 ZIP 다운로드 링크</div>
+          <div class="title">Naver</div>
+          <div class="desc">https://www.naver.com/</div>
         </div>
-        <div class="chev" aria-hidden="true">›</div>
+        <div class="chev" aria-hidden="true"></div>
       </a>
 
-      <!-- 카드 2 -->
-      <a class="card" href="https://www.notion.so" target="_blank" rel="noopener">
+      <!-- Google -->
+      <a class="card" href="https://www.google.co.kr/" target="_blank" rel="noopener">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="20" height="20">
-            <path d="M12 2l7 4v12l-7 4-7-4V6l7-4zm0 2.3L7 6.6v10.8l5 2.3 5-2.3V6.6l-5-2.3z"/>
-          </svg>
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=google.co.kr&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: search -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
         </div>
         <div class="text">
-          <div class="title">업무 노트</div>
-          <div class="desc">Notion 바로가기</div>
+          <div class="title">Google</div>
+          <div class="desc">https://www.google.co.kr/</div>
         </div>
-        <div class="chev" aria-hidden="true">›</div>
+        <div class="chev" aria-hidden="true"></div>
       </a>
 
-      <!-- 카드 3 -->
-      <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener">
+      <!-- YouTube -->
+      <a class="card" href="https://www.youtube.com/watch?v=jFkEFnlVDqs" target="_blank" rel="noopener">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="20" height="20">
-            <path d="M12 3a9 9 0 019 9c0 5-4 9-9 9S3 17 3 12a9 9 0 019-9zm-1 5v4H7v2h4v4h2v-4h4v-2h-4V8h-2z"/>
-          </svg>
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: play -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M8 5v14l11-7L8 5z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">YouTube</div>
+          <div class="desc">watch?v=jFkEFnlVDqs</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- ChatGPT -->
+      <a class="card" href="https://chat.openai.com/" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=chat.openai.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: sparkle -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M12 2l1.6 6.1L20 10l-6.4 1.9L12 18l-1.6-6.1L4 10l6.4-1.9L12 2z"/></svg>
         </div>
         <div class="text">
           <div class="title">ChatGPT</div>
-          <div class="desc">생산성 도구</div>
+          <div class="desc">https://chat.openai.com/</div>
         </div>
-        <div class="chev" aria-hidden="true">›</div>
+        <div class="chev" aria-hidden="true"></div>
       </a>
+
+      <!-- ===== 게임 ===== -->
+      <div class="cat">
+        <div class="cat-title">게임</div>
+        <div class="cat-line"></div>
+      </div>
+
+      <!-- Discord 채널 -->
+      <a class="card" href="https://discord.com/channels/1134059900666916935/1134850467101429890" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=discord.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: chat -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M4 4h16v12H7l-3 3V4zm3 5h10v2H7V9zm0-3h10v2H7V6z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">Discord 채널</div>
+          <div class="desc">특정 서버/채널 바로가기</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- buff -->
+      <a class="card" href="https://kimdanjin.github.io/buff/" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=kimdanjin.github.io&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: bolt -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M13 2L3 14h7l-1 8 12-14h-7l-1-6z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">buff</div>
+          <div class="desc">https://kimdanjin.github.io/buff/</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- MapleLand.gg -->
+      <a class="card" href="https://mapleland.gg/" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=mapleland.gg&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: badge -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">MapleLand.gg</div>
+          <div class="desc">https://mapleland.gg/</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- 네이버 검색: 네이버시계 -->
+      <a class="card" href="https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EB%84%A4%EC%9D%B4%EB%B2%84%EC%8B%9C%EA%B3%84&ackey=w4g52ycv" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=search.naver.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: magnifier -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">네이버 검색: 네이버시계</div>
+          <div class="desc">search.naver.com (query)</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- rhghkr.net -->
+      <a class="card" href="https://rhghkr.net/" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=rhghkr.net&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: link -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M10 13a5 5 0 010-7l1-1a5 5 0 017 7l-1 1-1.4-1.4 1-1a3 3 0 10-4.2-4.2l-1 1a3 3 0 000 4.2L10 13zm4-2a5 5 0 010 7l-1 1a5 5 0 01-7-7l1-1 1.4 1.4-1 1a3 3 0 104.2 4.2l1-1a3 3 0 000-4.2L14 11z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">rhghkr.net</div>
+          <div class="desc">https://rhghkr.net/</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- mashop -->
+      <a class="card" href="https://mashop.kr/" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=mashop.kr&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: store -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M4 7l2-4h12l2 4v3a3 3 0 01-3 3 3 3 0 01-2-.8 3 3 0 01-4 0A3 3 0 019 13a3 3 0 01-3-3V7zm2 8h12v7H6v-7zm3 2v3h6v-3H9z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">mashop</div>
+          <div class="desc">mashop.kr</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- ===== 학습 ===== -->
+      <div class="cat">
+        <div class="cat-title">학습</div>
+        <div class="cat-line"></div>
+      </div>
+
+      <!-- Wikidocs 33 -->
+      <a class="card" href="https://wikidocs.net/33" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=wikidocs.net&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: book -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M6 2h10a2 2 0 012 2v16a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm0 2v16h10V4H6z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">Wikidocs 33</div>
+          <div class="desc">https://wikidocs.net/33</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- Wikidocs 책 2944 -->
+      <a class="card" href="https://wikidocs.net/book/2944" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=wikidocs.net&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: book stack -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M4 6c0-1.1 4-2 8-2s8 .9 8 2-4 2-8 2-8-.9-8-2zm0 4c0 1.1 4 2 8 2s8-.9 8-2v3c0 1.1-4 2-8 2s-8-.9-8-2v-3zm0 7c0 1.1 4 2 8 2s8-.9 8-2v3c0 1.1-4 2-8 2s-8-.9-8-2v-3z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">Wikidocs 책 2944</div>
+          <div class="desc">https://wikidocs.net/book/2944</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- Samsung Skillflo -->
+      <a class="card" href="https://samsung.skillflo.io/auth/signin?redirectUrl=%2F" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=samsung.skillflo.io&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: key -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M14 3a7 7 0 104.9 12l3.1 3.1V21h-3v-2h-2v-2h-2l-1.2-1.2A7 7 0 0014 3zm0 2a5 5 0 110 10 5 5 0 010-10z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">Samsung Skillflo</div>
+          <div class="desc">samsung.skillflo.io</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- ===== 디자인 ===== -->
+      <div class="cat">
+        <div class="cat-title">디자인</div>
+        <div class="cat-line"></div>
+      </div>
+
+      <!-- Flaticon -->
+      <a class="card" href="https://www.flaticon.com/icon-fonts-most-downloaded/13" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=flaticon.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: grid -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">Flaticon</div>
+          <div class="desc">icon fonts most downloaded</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- Adobe Photoshop (web) -->
+      <a class="card" href="https://photoshop.adobe.com/" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=photoshop.adobe.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: image -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 3a2 2 0 100 4 2 2 0 000-4zm-1 11h12l-4-6-3 4-2-3-3 5z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">Adobe Photoshop (web)</div>
+          <div class="desc">https://photoshop.adobe.com/</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- ===== 학교 ===== -->
+      <div class="cat">
+        <div class="cat-title">학교</div>
+        <div class="cat-line"></div>
+      </div>
+
+      <!-- 세종사이버대 -->
+      <a class="card" href="https://home.sjcu.ac.kr/ko/dept/software-engineering-expert.do?major_tab=5&sub_tab=0" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=home.sjcu.ac.kr&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: graduation cap -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M12 3L1 9l11 6 9-4.9V17h2V9L12 3zm-7 9.2V14c0 2.2 3.1 4 7 4s7-1.8 7-4v-1.8l-7 3.8-7-3.8z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">세종사이버대 (SJC) - 소프트웨어공학</div>
+          <div class="desc">dept/software-engineering-expert</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- 한양사이버대 -->
+      <a class="card" href="https://www.hycu.ac.kr/user/maSnEx/goMain/30058/loadMap.do" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=hycu.ac.kr&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: map pin -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 112.5-2.5A2.5 2.5 0 0112 11.5z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">한양사이버대 (HYCU)</div>
+          <div class="desc">loadMap.do</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- SJC CMS -->
+      <a class="card" href="https://cms.sjcu.ac.kr/computer/index.do" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=cms.sjcu.ac.kr&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: monitor -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M4 5h16a2 2 0 012 2v9a2 2 0 01-2 2H13v2h3v2H8v-2h3v-2H4a2 2 0 01-2-2V7a2 2 0 012-2zm0 2v9h16V7H4z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">SJC CMS (컴퓨터)</div>
+          <div class="desc">cms.sjcu.ac.kr</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- KOSAF 포털 -->
+      <a class="card" href="https://portal.kosaf.go.kr/CO/jspActionSafe.do" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=portal.kosaf.go.kr&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: shield -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4zm0 4.2L6 8v4c0 3.8 2.4 7 6 7.7 3.6-.7 6-3.9 6-7.7V8l-6-1.8z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">KOSAF 포털</div>
+          <div class="desc">portal.kosaf.go.kr</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <!-- ===== 기타 ===== -->
+      <div class="cat">
+        <div class="cat-title">기타</div>
+        <div class="cat-line"></div>
+      </div>
+
+      <!-- OneDrive 문서 -->
+      <a class="card" href="https://onedrive.live.com/personal/edead69383001f1c/_layouts/15/Doc.aspx?sourcedoc=%7B50f94d62-9d00-4012-a3a1-cb194267038f%7D&action=default&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3gvYy9lZGVhZDY5MzgzMDAxZjFjL0lRQmlUZmxRQUowU1FLT2h5eGxDWndPUEFmTEM5TW0tVDAxc2N5bG1Jd2MwUlNNP2U9Qk5QMlRs&slrid=d569e6a1-30b1-b000-1a44-4d749b1b3091&originalPath=aHR0cHM6Ly8xZHJ2Lm1zL3gvYy9lZGVhZDY5MzgzMDAxZjFjL0lRQmlUZmxRQUowU1FLT2h5eGxDWndPUEFmTEM5TW0tVDAxc2N5bG1Jd2MwUlNNP3J0aW1lPWlOUFBZb2hEM2tn&CID=759bf577-8d48-4b71-b865-973f7b7e0806&_SRM=0:G:43"
+         target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <img class="favicon" src="https://www.google.com/s2/favicons?domain=onedrive.live.com&sz=64" alt=""
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <!-- fallback: cloud -->
+          <svg class="fallback" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path d="M19 18H7a4 4 0 010-8 5 5 0 019.7-1.6A3.5 3.5 0 1119 18z"/></svg>
+        </div>
+        <div class="text">
+          <div class="title">OneDrive 문서</div>
+          <div class="desc">onedrive.live.com</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
+      <a class="card" href="downloads/my_image.png" download>
+        <div class="icon" aria-hidden="true">
+            <!-- 이미지 아이콘(아무거나) -->
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 5a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 3a2 2 0 100 4 2 2 0 000-4zm-1 11h12l-4-6-3 4-2-3-3 5z"/></svg>
+        </div>
+        <div class="text">
+            <div class="title">PNG 다운로드</div>
+            <div class="desc">my_image.png</div>
+        </div>
+        <div class="chev" aria-hidden="true"></div>
+      </a>
+
 
     </section>
   </main>
 
   <footer class="foot">
-    <small>© My Cards</small>
+    <small>© My Bookmark Launcher</small>
   </footer>
 </body>
 </html>
