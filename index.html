@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>바로가기 카드</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>내 바로가기</h1>
+    <p>카드를 클릭하면 링크로 이동합니다.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="grid" aria-label="바로가기 카드 목록">
+
+      <!-- 카드 1 -->
+      <a class="card" href="https://www.google.com" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <!-- 간단한 SVG 아이콘(폴더 느낌) -->
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M10 4l2 2h8a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2h6z"/>
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">Shock_sticker Download</div>
+          <div class="desc">스티커 ZIP 다운로드 링크</div>
+        </div>
+        <div class="chev" aria-hidden="true">›</div>
+      </a>
+
+      <!-- 카드 2 -->
+      <a class="card" href="https://www.notion.so" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M12 2l7 4v12l-7 4-7-4V6l7-4zm0 2.3L7 6.6v10.8l5 2.3 5-2.3V6.6l-5-2.3z"/>
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">업무 노트</div>
+          <div class="desc">Notion 바로가기</div>
+        </div>
+        <div class="chev" aria-hidden="true">›</div>
+      </a>
+
+      <!-- 카드 3 -->
+      <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M12 3a9 9 0 019 9c0 5-4 9-9 9S3 17 3 12a9 9 0 019-9zm-1 5v4H7v2h4v4h2v-4h4v-2h-4V8h-2z"/>
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">ChatGPT</div>
+          <div class="desc">생산성 도구</div>
+        </div>
+        <div class="chev" aria-hidden="true">›</div>
+      </a>
+
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small>© My Cards</small>
+  </footer>
+</body>
+</html>
