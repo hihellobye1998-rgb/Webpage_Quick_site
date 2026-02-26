@@ -1,135 +1,143 @@
 :root{
-  --bg: #0b1220;
-  --panel: rgba(255,255,255,0.06);
-  --panel2: rgba(255,255,255,0.08);
-  --border: rgba(255,255,255,0.12);
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.65);
-  --shadow: 0 10px 30px rgba(0,0,0,0.35);
-  --radius: 18px;
+  --bg:#f6f7fb;
+  --row:#ffffff;
+  --rowHover:#fbfcff;
+  --border:#e7e9f2;
+  --text:#111827;
+  --muted:#6b7280;
+  --shadow:0 10px 22px rgba(17,24,39,0.08);
+  --radius:14px;
 }
 
-*{ box-sizing: border-box; }
-html, body{ height:100%; }
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
-  background:
-    radial-gradient(1200px 700px at 20% 10%, rgba(82,113,255,0.22), transparent 60%),
-    radial-gradient(900px 600px at 80% 20%, rgba(0,255,200,0.12), transparent 60%),
-    var(--bg);
-  color: var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 
-.top{
-  max-width: 980px;
-  margin: 42px auto 18px;
-  padding: 0 18px;
-}
-.top h1{
-  margin: 0 0 6px;
-  font-size: 28px;
-  letter-spacing: -0.3px;
-}
-.top p{
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-}
+.top{max-width:980px;margin:42px auto 10px;padding:0 18px}
+.top h1{margin:0 0 6px;font-size:26px;letter-spacing:-0.2px}
+.top p{margin:0;color:var(--muted);font-size:14px}
 
-.wrap{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 18px;
-}
+.wrap{max-width:980px;margin:0 auto;padding:18px}
 
+/* C의 “목록” 느낌 유지 */
 .grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-@media (max-width: 720px){
-  .grid{ grid-template-columns: 1fr; }
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .card{
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 16px;
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, var(--panel), rgba(255,255,255,0.04));
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-  overflow: hidden;
-  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
-}
-
-.card::after{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  background: radial-gradient(420px 120px at 20% 0%, rgba(255,255,255,0.08), transparent 60%);
-  opacity: 0;
-  transition: opacity 160ms ease;
-  pointer-events:none;
+  display:flex;align-items:center;gap:14px;
+  padding:14px 14px;border-radius:var(--radius);
+  background:var(--row);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  text-decoration:none;color:inherit;
+  transition:transform 110ms ease, box-shadow 110ms ease, background 110ms ease;
 }
 
 .card:hover{
-  transform: translateY(-2px);
-  background: linear-gradient(180deg, var(--panel2), rgba(255,255,255,0.05));
-  border-color: rgba(255,255,255,0.2);
+  transform:translateY(-1px);
+  background:var(--rowHover);
+  box-shadow:0 14px 28px rgba(17,24,39,0.12);
 }
-.card:hover::after{ opacity: 1; }
 
+/* 버전 C의 “앱 아이콘” 느낌 유지 (사각 라운드) */
 .icon{
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
+  width:38px;height:38px;border-radius:12px;
+  display:grid;place-items:center;
+  background:#f1f5ff;
+  border:1px solid #dde6ff;
+  flex:0 0 auto;
+}
+
+.icon svg{fill:#1f3cff}
+
+.text{min-width:0;flex:1 1 auto}
+.title{font-weight:850;letter-spacing:-0.2px}
+.desc{margin-top:4px;font-size:13px;color:var(--muted)}
+
+/* C의 OPEN 뱃지 유지 + 라이트 톤 */
+.chev{
+  font-size:12px;
+  color:#4b5563;
+  padding:6px 10px;
+  border:1px solid #d7dbea;
+  background:#ffffff;
+  border-radius:999px;
+}
+.chev::before{content:"OPEN";}
+
+.foot{max-width:980px;margin:18px auto 28px;padding:0 18px;color:#9aa3b2}
+
+/* category header */
+.cat{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding: 18px 6px 10px;   /* 위/아래 여백 늘림 */
+  margin-top: 18px;         /* 이전 카드와 더 떨어지게 */
+}
+
+.cat-title{
+  font-size: 15px;          /* 글씨 키움 (12 -> 15) */
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.cat-line{
+  height: 1px;
+  flex: 1;
+  opacity: 0.18;
+  background: currentColor;
+}
+
+/* 카테고리 '블록' 간격(헤더 다음 카드들과의 묶음 느낌) */
+.cat + .card{
+  margin-top: 6px;          /* 헤더 바로 아래 첫 카드 살짝 띄움 */
+}
+
+/* 다음 카테고리 헤더가 나오기 전에 여백을 더 줘서
+   "학습 카드들 끝 -> (여백) -> 디자인 헤더" 느낌 만들기 */
+.card + .cat{
+  margin-top: 26px;         /* 이 숫자 커질수록 카테고리 사이 더 벌어짐 */
+}
+
+/* favicon img */
+.favicon{
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 아이콘 박스에서 이미지가 삐져나오지 않게 */
+.icon{
+  overflow: hidden;
+}
+
+/* favicon img (로고 크기/정렬 고정) */
+.icon{
+  overflow: hidden;       /* 밖으로 못 나가게 */
   display: grid;
   place-items: center;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  flex: 0 0 auto;
 }
 
-.icon svg{
-  fill: rgba(255,255,255,0.9);
+/* 로고(파비콘) 크기: 작게 고정 */
+.favicon{
+  width: 20px;            /* 16~20 사이 추천 */
+  height: 20px;
+  object-fit: contain;
+  display: block;
 }
 
-.text{
-  min-width: 0;
-  flex: 1 1 auto;
-}
-.title{
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.desc{
-  margin-top: 4px;
-  font-size: 13px;
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.chev{
-  font-size: 22px;
-  color: rgba(255,255,255,0.55);
-  flex: 0 0 auto;
-}
-
-.foot{
-  max-width: 980px;
-  margin: 18px auto 28px;
-  padding: 0 18px;
-  color: rgba(255,255,255,0.45);
+/* fallback SVG 색이 기존처럼 보이게(필요시) */
+.fallback{
+  display: none;
 }
